@@ -1,0 +1,12 @@
+<div>
+  <h1>Buscador de Peliculas</h1>
+  <label for="title">Titulo: </label>
+  <input id="title" name="title" type="text" (keypress)="getFilms($event)" />
+  <p
+    *ngFor="let film of films.Search"
+    [routerLink]="['/film', film.imdbID]"
+    (click)="getFilm(film.imdbID)"
+  >
+    {{ film.Title }}
+  </p>
+</div>
